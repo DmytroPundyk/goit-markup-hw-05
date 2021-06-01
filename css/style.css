@@ -74,7 +74,6 @@ body {
 
 .contacts-list {
  margin-left:auto;
- align-items: baseline;
 
 }
 
@@ -83,6 +82,7 @@ body {
 }
 
 .contact-icon {
+   display: inline-block;
     margin-right: 10px;
    fill: currentColor;
    
@@ -104,7 +104,8 @@ body {
    padding: 32px 0 32px 0;
 }
 .contacts-list-link {
-   display: block;
+   display: flex;
+   align-items: center;
    text-decoration: none;
    font-weight: 500;
    font-size: inherit;
@@ -337,7 +338,8 @@ margin-top: 16px;
 .team-social-link {
    display:block;
    border-radius: 50%;
-  background-color: var(--main-color);
+  background-color: none;
+  color:rgba(175, 177, 184, 1);
    width: 44px;
    height: 44px; 
    padding: 12px; 
@@ -345,16 +347,14 @@ margin-top: 16px;
 .team-social-link:hover,
 .team-social-link:focus{
  background-color: var(--special-color); 
+ color: var(--main-color);
 }
 .team-social-icon {
    height: 20px;
    width: 20px;
-   fill:rgba(175, 177, 184, 1);
+   fill:currentColor;
 }
-.team-social-icon:hover,
-.team-social-icon:focus{
-  fill:var(--main-color);
-}
+
 /* секция клиенты */
 .customers {
    padding: 94px 0 94px 0;
