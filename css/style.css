@@ -247,12 +247,9 @@ fill:#000;
 
 }
 .features-part li {
-   width: 270px;
-   margin-right:var(--basic-card-gap);  
+   width: 270px;  
 }
-.features-part li:last-child{
-   margin-right: 0;
-}
+
 
 .features-part h3 {
    text-transform: uppercase;
@@ -336,13 +333,15 @@ margin-top: 16px;
    margin-right: 10px;
 }
 .team-social-link {
-   display:block;
+   display:flex;
+   justify-content: center;
+   align-items: center;
    border-radius: 50%;
   background-color: none;
   color:rgba(175, 177, 184, 1);
    width: 44px;
    height: 44px; 
-   padding: 12px; 
+ 
 }
 .team-social-link:hover,
 .team-social-link:focus{
@@ -374,13 +373,15 @@ margin-top: 16px;
    margin-right:var(--basic-card-gap);
 } 
 .customers a{
-   display: block;
+   display: flex;
+   justify-content: center;
+   align-items: center;
    width: 170px;
    height: 92px;
    border-radius: 4px;
    color:rgba(175, 177, 184, 1);
    border: 1px solid rgba(175, 177, 184, 1);
-    padding: 16px 32px;
+    
 }
 .customer-icon {
    width: 106px;
@@ -429,6 +430,7 @@ margin-bottom: 9px;
 .footer-addres-list .white{
    color: var(--main-color);
 }
+.footer-part ul a:focus,
 .footer-part ul a:hover {
    color: var(--special-color);
 }
@@ -455,12 +457,14 @@ margin-bottom: 9px;
 }
 
 .container-sociallink a{
-   display:block;
+   display:flex;
+   justify-content: center;
+   align-items: center;
    border-radius: 50%;
    background-color: #ffffff1a;
    width: 44px;
    height: 44px; 
-   padding: 12px;
+  
 }
 .container-sociallink a:hover,
 .container-sociallink a:focus{
@@ -516,20 +520,21 @@ margin-bottom: 9px;
     margin-top:calc(-1* var(--basic-card-gap));
     margin-left:calc(-1* var(--basic-card-gap));
    display:flex;
+   flex-basis: calc(100%/3 -30px);
    flex-wrap: wrap;
   }
   .pattern-list a {
+     display:block;
      text-decoration: none;
   }
-.pattern-list li:hover,
-.pattern-list li:focus {
+.pattern-list a:hover,
+.pattern-list a:focus {
    text-decoration: none;
    box-shadow: 0px 1px 1px #0000001f,
     0px 4px 4px #0000000f, 1px 4px 6px #00000029;
 }
 .pattern-list li{
    background-color: var(--main-color);
-   flex-basis: calc(100%/3 -30px);
    margin-left: var(--basic-card-gap);
    margin-top: var(--basic-card-gap);
 
