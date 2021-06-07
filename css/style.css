@@ -189,8 +189,8 @@ a.active {
 /* модальное окно*/
 .backdrop.is-hidden {
    visibility: hidden;
-   opacity: 0;
    pointer-events: none;
+   opacity: 0;
 }
 .backdrop {
   position:fixed;
@@ -201,18 +201,23 @@ a.active {
    background:#00000033;
    visibility: visible;
    z-index: 2;
+   opacity: 1;
+   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden .modal{
+  transform:translate(50%,50%) scale(0,3); 
 }
 .modal{
    position:absolute;
    top:50%;
    left:50%;
-   transform: translate(-50%,-50%);
    min-width: 528px;
    min-height: 581px;
    background: var(--main-color);
    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
    border-radius: 4px;
-
+   transform:translate(-50%,-50%) scale(1);
+   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
   
 }
 .modal-button{
@@ -588,25 +593,19 @@ margin-bottom: 9px;
    margin-left: var(--basic-card-gap);
    margin-top: var(--basic-card-gap);
 }
-.pattern-overlay{
+.pattern-thumb{
   position: relative;
   overflow: hidden;
  
 }
-.pattern-link:hover  .overlay-text,
-.pattern-link:focus  .overlay-text{
-   opacity: 1;
-   transform:translate(-50%,-50%);
 
-} 
-.pattern-link:hover .pattern-overlay::before,
-.pattern-link:focus .pattern-overlay::before{
+.pattern-link:hover .pattern-overlay ,
+.pattern-link:focus .pattern-overlay{
    opacity:1;
    transform:translate(-50%,-50%);
 
 } 
- .pattern-overlay::before {
-   content: "";
+ .pattern-overlay {
    position: absolute;
    top:50%;
    left:50%;
@@ -623,6 +622,9 @@ margin-bottom: 9px;
 }
 .pattern-overlay .overlay-text {
    position: absolute;
+   top:50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
    width: 322px;
    height: 168px;
    margin: 0;
@@ -630,14 +632,6 @@ margin-bottom: 9px;
    line-height: 1.555;
    letter-spacing: 0.03em;
    color:var(--main-color);
-   top:50%;
-   left: 50%;
-   transform: translate(-50%, 100%);
-   opacity: 0;
-   transition-property: opacity,transform;
-   transition-duration: 250ms;
-   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  
 }
 
 .pattern-card-description {
